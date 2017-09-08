@@ -5,6 +5,7 @@ class LinkCreate extends Component {
     handleSubmit (event){
         event.preventDefault();
         console.log(this.refs);
+        Meteor.call('links.insert', this.refs.input.value);
     }
 
     render(){
