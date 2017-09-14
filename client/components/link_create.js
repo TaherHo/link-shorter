@@ -13,8 +13,10 @@ class LinkCreate extends Component {
         Meteor.call('links.insert', this.refs.input.value, (error) => {
             if(error)
                 this.setState({error:'Enter a valid URL!'});
-            else
+            else{
                 this.setState({error:''});
+                this.refs.input.value = '';
+            }
         });
     }
 
