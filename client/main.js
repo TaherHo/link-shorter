@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import HeaderComp from './components/header';
 import LinkCreate from './components/link_create';
 
-import {Link} from '../imports/collections/link';
+import {Link} from '../imports/collections/links';
 
 const App = () =>{
     return(

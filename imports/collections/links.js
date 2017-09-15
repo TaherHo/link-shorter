@@ -16,4 +16,5 @@ Meteor.methods({
         }
     }
 });
+
 export const Link = new Mongo.Collection('link');
