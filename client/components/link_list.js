@@ -6,6 +6,8 @@ import {Meteor} from 'meteor/meteor';
 
 class LinkList extends Component {
 
+
+
     renderRows() {
         return this.props.links.map(link => {
             const {url, token, clicks} = link;
@@ -14,7 +16,7 @@ class LinkList extends Component {
             return (<tr key={token}>
                         <th>{url}</th>
                         <th>
-                            <a href="shortAddress">{shortAddress}</a>
+                            <a href={shortAddress}>{shortAddress}</a>
                         </th>
                         <th>{clicks}</th>
                     </tr>
