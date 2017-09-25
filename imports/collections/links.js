@@ -22,12 +22,11 @@ Meteor.methods({
     },
     'links.delete': function (token) {
         const deleteCandidate = Link.findOne({token: token});
-        if (deleteCandidate) {
-            if (confirm(deleteCandidate.url + 'will be deleted. are you sure?'))
-                Link.remove({token: token});
-            else
-                throw new Meteor.Error('112', 'The user canceled deleting.');
-        }
+        if (deleteCandidate)
+            Link.remove({token: token});
+        else
+            return new Meteor.Error('222', 'The Url is not exist.');
+
     }
 });
 

@@ -7,12 +7,15 @@ import {Meteor} from 'meteor/meteor';
 class LinkList extends Component {
 
     deleteHandler() {
-        console.log(this.token);
-        Meteor.call('links.delete', this.token, (error) => {
-                if (error)
-                    console.log(error.message);
-            }
-        )
+        const confirmed = confirm(this.url + 'will be deleted. are you sure?');
+        if (confirmed) {
+            Meteor.call('links.delete', this.token, (error) => {
+                    if (error)
+                        console.log(error.message);
+                }
+            )
+        } else
+            throw new Meteor.Error('112', 'The user canceled deleting.')
     }
 
     renderRows() {
